@@ -1,22 +1,28 @@
 <?php
-if(isset($_POST['OK'])){
-	
-	$id_pasien 	= $_POST['id_pasien'];
-	$nama_pasien		= $_POST['nama_pasien'];
-  $id_antrian 	= $_POST['id_antrian'];
-  $usia 	= $_POST['usia'];
-	$jk	= $_POST['jk'];
-  $no_telp	= $_POST['no_telp'];
+require 'koneksi.php';
 
-	include 'koneksi.php';
-	$sql = "INSERT INTO tbl_pasien VALUES ('$id_pasien', '$nama_pasien', '$id_antrian', '$usia', '$jk','$no_telp')";
-	$proses = $connect->query($sql);
-	//setelah memasukan data redirect ke index/tampil data
-	echo "<script>window.location.href='sistem-index.php'</script>";
-  
-  
-} 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id_pasien = $_POST['id_pasien'];
+    $nama_pasien = $_POST['nama_pasien'];
+    $id_antrian = $_POST['id_antrian'];
+    $usia = $_POST['usia'];
+    $jk = $_POST['jk'];
+    $no_telp = $_POST['no_telp'];
+    // Membuat prepared statement
+    $stmt = $connect->prepare("INSERT INTO tbl_admin (id_pasien, nama_pasien, id_antrian, usia, jk, no_telp) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $id_pasien, $nama_pasien, $id_antrian, $usia, $jk, $no_telp);
+
+    if ($stmt->execute()) {
+        header("location: login.php");
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
