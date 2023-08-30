@@ -8,7 +8,7 @@ if (isset($_POST['OK'])) {
     $no_telp = $_POST['no_telp'];
     // Membuat prepared statement
     $stmt = $connect->query("INSERT INTO tbl_pasien ( nama_pasien, usia, jk, no_telp) VALUES ( '$nama_pasien', '$usia', '$jk', '$no_telp')");
-    echo "<script>window.location.href='pasien.php'</script>";
+    echo "<script>window.location.href='index.php'</script>";
     $stmt->close();
 }
 ?>
