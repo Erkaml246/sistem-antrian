@@ -1,23 +1,14 @@
 <?php
 require 'koneksi.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id_pasien = $_POST['id_pasien'];
+if (isset($_POST['OK'])) {
     $nama_pasien = $_POST['nama_pasien'];
-    $id_antrian = $_POST['id_antrian'];
     $usia = $_POST['usia'];
     $jk = $_POST['jk'];
     $no_telp = $_POST['no_telp'];
     // Membuat prepared statement
-    $stmt = $connect->prepare("INSERT INTO tbl_admin (id_pasien, nama_pasien, id_antrian, usia, jk, no_telp) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $id_pasien, $nama_pasien, $id_antrian, $usia, $jk, $no_telp);
-
-    if ($stmt->execute()) {
-        header("location: login.php");
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
+    $stmt = $connect->query("INSERT INTO tbl_pasien ( nama_pasien, usia, jk, no_telp) VALUES ( '$nama_pasien', '$usia', '$jk', '$no_telp')");
+    echo "<script>window.location.href='pasien.php'</script>";
     $stmt->close();
 }
 ?>

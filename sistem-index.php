@@ -1,7 +1,5 @@
 <?php
 if(isset($_POST['OK'])){
-	
-	$id_pasien 	= $_POST['id_pasien'];
 	$nama_pasien		= $_POST['nama_pasien'];
   $id_antrian 	= $_POST['id_antrian'];
   $usia 	= $_POST['usia'];
@@ -12,7 +10,7 @@ if(isset($_POST['OK'])){
 	$sql = "INSERT INTO tbl_pasien VALUES ('$id_pasien', '$nama_pasien', '$id_antrian', '$usia', '$jk','$no_telp')";
 	$proses = $connect->query($sql);
 	//setelah memasukan data redirect ke index/tampil data
-	echo "<script>window.location.href='sistem-index.php'</script>";
+	echo "<script>window.location.href='index.php'</script>";
   
   
 } 

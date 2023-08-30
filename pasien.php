@@ -329,7 +329,7 @@ $tampil = $connect->query("select * from tbl_pasien");
                         
                         <div class="card-body">
                             <div class="my-2"></div>
-                                        <a href="sistem-index.php" class="btn btn-success btn-icon-split">
+                                        <a href="index.php" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-10">
                                             <i class="fas fa-solid fa-plus"></i>
                                             </span>
