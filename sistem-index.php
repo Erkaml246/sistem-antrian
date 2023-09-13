@@ -10,7 +10,7 @@ if(isset($_POST['OK'])){
 	$sql = "INSERT INTO tbl_pasien VALUES ('$id_pasien', '$nama_pasien', '$id_antrian', '$usia', '$jk','$no_telp')";
 	$proses = $connect->query($sql);
 	//setelah memasukan data redirect ke index/tampil data
-	echo "<script>window.location.href='index.php'</script>";
+	echo "<script>window.location.href='pasien.php'</script>";
   
   
 } 

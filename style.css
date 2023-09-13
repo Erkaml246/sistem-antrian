@@ -7,7 +7,7 @@
   }
   a {
     color: #666;
-    font-size: 14px;
+    font-size: 14em;
     display: block;
   }
   .login-title {
@@ -17,12 +17,13 @@
     display: flex;
   }
   .notice {
-    font-size: 13px;
+    font-size: 13em;
     text-align: center;
     color: #666;
   }
   .login {
-    width: 30%;
+    width: 100%;
+    max-width: 400px;
     height: 100vh;
     background: #FFF;
     padding: 60px;
@@ -40,7 +41,7 @@
   }
   .form-login label {
     text-align: left;
-    font-size: 13px;
+    font-size: 13em;
     margin-top: 10px;
     margin-left: 20px;
     display: block;
@@ -67,7 +68,7 @@
     width: 100%;
     border: 0;
     background: none;
-    font-size: 16px;
+    font-size: 16em;
     padding: 4px 0;
     outline: none;
   }
@@ -80,7 +81,7 @@
     color: #FFF;
     display: inline-block;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 16em;
     font-weight: bold;
     margin-top: 10px;
     transition: ease all 0.3s;
@@ -89,7 +90,8 @@
     opacity: 0.9;
   }
   .background {
-    width: 70%;
+    width: 100%; /* Menggunakan persentase */
+    max-width: 800px;
     padding: 40px;
     height: 100vh;
     background: linear-gradient(60deg, rgba(2, 39, 141, 0.603), rgba(251, 253, 252, 0.342)), url('image_1.png') center no-repeat;
@@ -111,7 +113,7 @@
   .background p {
     max-width: 650px;
     color: #1a1a1a;
-    font-size: 15px;
+    font-size: 15em;
     text-align: right;
     padding: 0;
     margin: 15px 0 0 0;
@@ -121,7 +123,7 @@
     text-align: center;
   }
   .created p {
-    font-size: 13px;
+    font-size: 13em;
     font-weight: bold;
     color: #008552;
   }
@@ -167,7 +169,7 @@
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 14em;
 }
 .form button {
   font-family: "Roboto", sans-serif;
@@ -178,7 +180,7 @@
   border: 0;
   padding: 15px;
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 14em;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
@@ -189,7 +191,7 @@
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
-  font-size: 12px;
+  font-size: 12em;
 }
 .form .message a {
   color: #5272b8;
@@ -216,13 +218,13 @@
 .container .info h1 {
   margin: 0 0 15px;
   padding: 0;
-  font-size: 36px;
+  font-size: 36em;
   font-weight: 300;
   color: #1a1a1a;
 }
 .container .info span {
   color: #4d4d4d;
-  font-size: 12px;
+  font-size: 12em;
 }
 .container .info span a {
   color: #000000;
@@ -239,4 +241,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
-/* CSS TAMBAH */
+
+/* Media query untuk layar seluler (di bawah 768px) */
+@media screen and (max-width: 768px) {
+  .login {
+    padding: 20px; /* Mengurangi padding pada layar kecil */
+  }
+  .background {
+    padding: 20px; /* Mengurangi padding pada layar kecil */
+  }
+  /* Tambahkan pengaturan tampilan responsif lainnya di sini */
+}
